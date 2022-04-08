@@ -21,7 +21,7 @@ func Unpack(s string) (string, error) {
 		if unicode.IsDigit(res) && unicode.IsDigit(rune(s[i-1])) {
 			return "", ErrInvalidString
 		}
-		if unicode.IsDigit(res) && s[i] == 48 { //Zero character check, rune 48 == string 0
+		if unicode.IsDigit(res) && s[i] == 48 { // Zero character check, rune 48 == string 0
 			str = str[:len(str)-1]
 			continue
 		}
