@@ -26,7 +26,7 @@ func Unpack(s string) (string, error) {
 			continue
 		}
 		if unicode.IsDigit(res) && len(str) > 3 && s[i-2] == '\\' {
-			str += strings.Repeat(string(s[i-2])+string(s[i-1]), int(res-'0'))
+			str += strings.Repeat(string(s[i-2])+string(s[i-1]), int(res-'0')-1)
 			continue
 		} else if unicode.IsDigit(res) {
 			str += strings.Repeat(string(s[i-1]), int(res-'0')-1)
